@@ -1,0 +1,28 @@
+<%-include('header') %>
+    <div class="container">
+        <h1>Password Categories List</h1>
+        <table style="width: 100%;">
+          <thead>
+            <tr style="border-bottom: 3px solid;" >
+              <th>Category Name</th>
+              <th class="text-center">Actions</th>
+            </tr>
+          </thead>
+              <% if(records.length > 0){%>
+                <% records.forEach(function(row){%>      
+                  <tr style="border-bottom: 1.5px solid gray; font-weight: bolder;">
+                    <td ><%= row.category %></td>
+                    <td class="text-center">
+                    <a class="btn btn-danger btn-xs" href="/showCategories/delete/<%= row._id %>" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i></a>
+                    </td>
+                  </tr>
+                <%}) %>  
+              <%}else{%>
+                <tr style="border-bottom: 1.5px solid gray; font-weight: bolder;">
+                  <td colspan="2" class="text-center">Records are Not Found...</td>
+                </tr>
+                <%} %> 
+        </table>
+      </div>
+  </body>
+</html>

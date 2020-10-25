@@ -1,0 +1,50 @@
+<%-include('header') %>
+
+    <div class="container">
+        <div class="row">
+          <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <div class="panel-title">Password Category</div>
+                <div style="float: right; font-size: 85%; position: relative; top: -10px;" ></div>
+              </div>
+              <div class="panel-body">
+                <form action="/category" id="addNewCateoryForm" class="form-horizontal" role="form" method="post">
+
+                  <% if ( error_message != ''){%>
+                    <div id="signupalert" class="alert alert-dismissible alert-danger text-center">
+                        <button type="button" class="close" data-dismiss='alert'>&times;</button>
+                        <strong ><%= error_message %></strong>
+                    </div>
+                  <%} %>
+                  <% if(success_message != ''){%>
+                    <div id="signupalert" class="alert alert-dismissible alert-success text-center">
+                      <button type="button" class="close" data-dismiss='alert'>&times;</button>
+                      <strong ><%= success_message %></strong>
+                  </div>
+                  <%} %>
+
+                  <div class="form-group">
+                    <label for="username" class="col-md-3 control-label">Category Name</label>
+                    <div class="col-md-9">
+                      <input type="text" class="form-control" name="passwordCategory" placeholder="Enter your password Category name">
+                    </div>
+                  </div>
+    
+                  <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-9">
+                      <input type="submit" type="button" class="btn btn-info" value="Add Category">
+                    </div>
+                  </div>
+                  <p><a href="/showCategories">View All Category List</a></p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+  </body>
+</html>
